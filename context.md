@@ -1,6 +1,8 @@
 # Projekto kontekstas
 
 ## Kas pakeista
+- Pataisytas `Calendar` importas: komponentas eksportuojamas kaip numatytasis, todėl `App.jsx` dabar jį importuoja teisingai.
+- Suderintas kalendoriaus užduoties paspaudimo callback'as su komponento `onTaskClick` savybe, kad paspaudus užduotį atsidarytų redagavimo langas.
 - Pridėtas pagrindinis vaizdų perjungimas tarp „Užduotys“ ir „Kalendorius“.
 - Sukurtas kalendoriaus vaizdas su mėnesio navigacija, dienų pasirinkimu ir pasirinktos dienos užduočių sąrašu.
 - Kalendorius naudoja esamą užduočių `dueDate` lauką. Paspaudus užduotį atveriamas redagavimo langas.

@@ -8,7 +8,7 @@ import { TaskFormDrawer } from './components/TaskFormDrawer'
 import { PeopleDrawer } from './components/PeopleDrawer'
 import { ConfirmDialog } from './components/ConfirmDialog'
 import { Modal } from './components/Modal'
-import { Calendar } from './components/Calendar'
+import Calendar from './components/Calendar'
 import { Toast } from './components/Toast'
 import { useTasks } from './hooks/useTasks'
 import { usePeople } from './hooks/usePeople'
@@ -128,7 +128,7 @@ export default function App() {
         <Calendar
           tasks={tasks}
           people={people}
-          onEditTask={(task) => { setEditingTask(task); setFormOpen(true) }}
+          onTaskClick={(task) => { setEditingTask(task); setFormOpen(true) }}
           onNewTask={(date) => openNewTask(date)}
         />
       ) : <>

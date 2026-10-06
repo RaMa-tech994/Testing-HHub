@@ -1,6 +1,7 @@
 # Projekto kontekstas
 
 ## Kas pakeista
+- Įgyvendintas Apžvalgos 3 žingsnis: pridėta komandos apkrovos lentelė su aktyviomis, atliktomis ir vėluojančiomis užduotimis pagal asmenį.
 - Įgyvendintas Apžvalgos 2 žingsnis: pridėtos šešios rodiklių kortelės, kurios perskaičiuojamos pasikeitus užduotims arba atsakingiems asmenims.
 - Įgyvendintas Apžvalgos 1 žingsnis: pridėtas trečias vaizdas ir grynos suvestinės pagalbinės funkcijos.
 - Užduočių sąraše atlikimo terminas rodomas vieną kartą – paliktas redaguojamas datos laukas, pašalintas jo dubliuojantis tekstinis atvaizdavimas.
@@ -32,10 +33,10 @@
 ## Planuojama: puslapis „Apžvalga“ (branch: `New-page-Apzvalga`)
 - Trečias pagrindinis vaizdas šalia „Užduotys“ ir „Kalendorius“; naudoja esamus užduočių laukus, modelio keisti nereikia. Be naujų bibliotekų, be grafikų ir be sąrašo „Reikia dėmesio“.
 - Išsamus planas Codex: `overview-mvp-plan.md`.
-- 5 žingsniai (po vieną commit'ą); 1 ir 2 žingsniai užbaigti:
+- 5 žingsniai (po vieną commit'ą); 1–3 žingsniai užbaigti:
   1. Vaizdo karkasas ir `utils/overviewHelpers.js` — atlikta.
   2. Šešios rodiklių kortelės — atlikta.
-  3. Komandos apkrovos lentelė.
+  3. Komandos apkrovos lentelė — atlikta.
   4. „Artimiausi terminai“ (5 įrašai, paspaudus atsidaro redagavimas).
   5. Kalendoriaus legendos ir antraštės sutvarkymas, responsyvumas, `lint` ir `build`, `context.md` atnaujinimas.
-- Kitas žingsnis: pridėti komandos apkrovos lentelę.
+- Kitas žingsnis: pridėti artimiausių terminų sąrašą.

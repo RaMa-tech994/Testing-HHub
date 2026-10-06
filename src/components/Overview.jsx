@@ -1,5 +1,6 @@
 import './Overview.css'
 import { OverviewStatCards } from './OverviewStatCards'
+import { WorkloadTable } from './WorkloadTable'
 
 export function Overview({ tasks, people, onTaskClick }) {
   return (
@@ -12,6 +13,7 @@ export function Overview({ tasks, people, onTaskClick }) {
     >
       <h2>Apžvalga</h2>
       <OverviewStatCards tasks={tasks} people={people} />
+      <WorkloadTable tasks={tasks} people={people} />
     </section>
   )
 }

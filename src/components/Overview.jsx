@@ -1,4 +1,5 @@
 import './Overview.css'
+import { OverviewStatCards } from './OverviewStatCards'
 
 export function Overview({ tasks, people, onTaskClick }) {
   return (
@@ -10,7 +11,7 @@ export function Overview({ tasks, people, onTaskClick }) {
       data-task-click-enabled={Boolean(onTaskClick)}
     >
       <h2>Apžvalga</h2>
-      <div className="overview-grid" />
+      <OverviewStatCards tasks={tasks} people={people} />
     </section>
   )
 }

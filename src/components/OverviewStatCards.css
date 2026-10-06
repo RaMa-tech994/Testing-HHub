@@ -1,0 +1,7 @@
+.overview-stat-card {
+  min-width: 0;
+}
+
+.overview-stat-card .stat-label {
+  line-height: 1.3;
+}

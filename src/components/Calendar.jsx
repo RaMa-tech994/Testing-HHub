@@ -70,15 +70,12 @@ function parseDate(dateString) {
   return new Date(year, month - 1, day);
 }
 
-function isSameDate(date1, date2) {
-  return formatDate(date1) === formatDate(date2);
-}
-
 export default function Calendar({
   tasks = defaultTasks,
   onTaskClick,
 }) {
   const today = new Date();
+  const todayString = formatDate(today);
 
   const [currentMonth, setCurrentMonth] = useState(
     new Date(today.getFullYear(), today.getMonth(), 1)
@@ -108,10 +105,10 @@ export default function Calendar({
         date,
         dateString: formatDate(date),
         isCurrentMonth: date.getMonth() === month,
-        isToday: isSameDate(date, today),
+        isToday: formatDate(date) === todayString,
       };
     });
-  }, [currentMonth]);
+  }, [currentMonth, todayString]);
 
   // Pasirinktos dienos užduotys
   const selectedTasks = useMemo(() => {
@@ -120,6 +117,7 @@ export default function Calendar({
 
   // Mėnesio užduočių skaičius
   const monthTasks = tasks.filter((task) => {
+    if (!task.dueDate) return false;
     const date = parseDate(task.dueDate);
 
     return (
@@ -157,9 +155,6 @@ export default function Calendar({
           <p>Peržiūrėkite suplanuotas užduotis pagal dieną.</p>
         </div>
 
-        <button className="calendar-today-btn" onClick={goToToday}>
-          Šiandien
-        </button>
       </div>
 
       <div className="calendar-layout">
@@ -169,7 +164,11 @@ export default function Calendar({
 
           <div className="calendar-month-header">
             <div className="calendar-month-navigation">
+              <button className="calendar-today-btn" onClick={goToToday}>
+                Šiandien
+              </button>
               <button
+                type="button"
                 onClick={() => changeMonth(-1)}
                 aria-label="Ankstesnis mėnuo"
               >
@@ -184,6 +183,7 @@ export default function Calendar({
               </h3>
 
               <button
+                type="button"
                 onClick={() => changeMonth(1)}
                 aria-label="Kitas mėnuo"
               >

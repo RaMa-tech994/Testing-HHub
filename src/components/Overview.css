@@ -1,17 +1,26 @@
-.overview-page h2 {
-  margin-bottom: 16px;
+.overview-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+}
+
+.overview-page > h2,
+.overview-page > .overview-stat-grid {
+  grid-column: 1 / -1;
+}
+
+.overview-page > h2 {
   color: var(--text-h);
   font-size: 24px;
 }
 
-.overview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+.overview-page > * {
+  min-width: 0;
 }
 
-@media (max-width: 760px) {
-  .overview-grid {
-    grid-template-columns: 1fr;
+@media (min-width: 1024px) {
+  .overview-page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

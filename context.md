@@ -1,6 +1,7 @@
 # Projekto kontekstas
 
 ## Kas pakeista
+- Užduočių sąraše atlikimo terminas rodomas vieną kartą – paliktas redaguojamas datos laukas, pašalintas jo dubliuojantis tekstinis atvaizdavimas.
 - Pašalinta „Kritinis“ prioriteto kategorija iš pasirinkimų ir statistikos. Seniau išsaugotos kritinės užduotys dabar įkeliamos kaip „Aukštas“ prioritetas.
 - Puslapio „Užduotys“ antraštėje sukeista mygtukų tvarka: „Nauja užduotis“ dabar rodoma prieš „Atsakingi asmenys“.
 - Pakeistas pagrindinis puslapio fonas iš melsvo į pilką (`src/index.css`).

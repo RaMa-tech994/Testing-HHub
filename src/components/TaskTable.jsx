@@ -1,5 +1,4 @@
 import { PRIORITIES, STATUSES, priorityTone, statusTone } from '../constants'
-import { formatLtDate } from '../utils/dates'
 import { getPersonName } from '../utils/taskHelpers'
 import { isTaskOverdue } from '../utils/dates'
 import { Badge } from './Badge'
@@ -118,18 +117,15 @@ export function TaskTable({
                     </div>
                   </td>
                   <td>
-                    <div className="stack">
-                      <span>{formatLtDate(task.dueDate)}</span>
-                      <input
-                        className="table-date"
-                        type="date"
-                        value={task.dueDate || ''}
-                        onChange={(event) =>
-                          onPatch(task.id, { dueDate: event.target.value || null })
-                        }
-                        aria-label={`Keisti terminą: ${task.title}`}
-                      />
-                    </div>
+                    <input
+                      className="table-date"
+                      type="date"
+                      value={task.dueDate || ''}
+                      onChange={(event) =>
+                        onPatch(task.id, { dueDate: event.target.value || null })
+                      }
+                      aria-label={`Keisti terminą: ${task.title}`}
+                    />
                   </td>
                   <td>
                     <select
@@ -232,7 +228,6 @@ export function TaskTable({
                   {STATUSES.find((item) => item.value === task.status)?.label}
                 </Badge>
               </div>
-              <p className="muted">Terminas: {formatLtDate(task.dueDate)}</p>
               <p className="muted">Atsakingas: {getPersonName(people, task.assigneeId)}</p>
               {task.notes ? <NotesCell notes={task.notes} onOpen={onOpenNotes} /> : null}
               <div className="card-fields">

@@ -1,0 +1,24 @@
+.overview-stat-grid.stats-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 0;
+}
+
+.overview-stat-card {
+  min-width: 0;
+}
+
+.overview-stat-card .stat-label {
+  line-height: 1.3;
+}
+
+@media (min-width: 1024px) {
+  .overview-stat-grid.stats-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .overview-stat-grid.stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

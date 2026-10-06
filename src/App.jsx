@@ -9,6 +9,7 @@ import { PeopleDrawer } from './components/PeopleDrawer'
 import { ConfirmDialog } from './components/ConfirmDialog'
 import { Modal } from './components/Modal'
 import Calendar from './components/Calendar'
+import { Overview } from './components/Overview'
 import { Toast } from './components/Toast'
 import { useTasks } from './hooks/useTasks'
 import { usePeople } from './hooks/usePeople'
@@ -67,6 +68,11 @@ export default function App() {
     setFormOpen(true)
   }
 
+  const openTaskForEditing = (task) => {
+    setEditingTask(task)
+    setFormOpen(true)
+  }
+
   const handleSaveTask = (payload) => {
     try {
       if (editingTask) {
@@ -121,14 +127,17 @@ export default function App() {
       <nav className="view-nav" aria-label="Pagrindiniai vaizdai">
         <button type="button" className={`btn ${activeView === 'tasks' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setActiveView('tasks')}>Užduotys</button>
         <button type="button" className={`btn ${activeView === 'calendar' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setActiveView('calendar')}>Kalendorius</button>
+        <button type="button" className={`btn ${activeView === 'overview' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setActiveView('overview')}>Apžvalga</button>
       </nav>
       {activeView === 'calendar' ? (
         <Calendar
           tasks={tasks}
           people={people}
-          onTaskClick={(task) => { setEditingTask(task); setFormOpen(true) }}
+          onTaskClick={openTaskForEditing}
           onNewTask={(date) => openNewTask(date)}
         />
+      ) : activeView === 'overview' ? (
+        <Overview tasks={tasks} people={people} onTaskClick={openTaskForEditing} />
       ) : <>
       <StatsCards
         stats={stats}

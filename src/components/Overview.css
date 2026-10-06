@@ -1,0 +1,17 @@
+.overview-page h2 {
+  margin-bottom: 16px;
+  color: var(--text-h);
+  font-size: 24px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 760px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+}

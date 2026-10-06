@@ -1,6 +1,7 @@
 # Projekto kontekstas
 
 ## Kas pakeista
+- Pakeistas pagrindinis puslapio fonas iš melsvo į pilką (`src/index.css`).
 - Pataisytas `Calendar` importas: komponentas eksportuojamas kaip numatytasis, todėl `App.jsx` dabar jį importuoja teisingai.
 - Suderintas kalendoriaus užduoties paspaudimo callback'as su komponento `onTaskClick` savybe, kad paspaudus užduotį atsidarytų redagavimo langas.
 - Pridėtas pagrindinis vaizdų perjungimas tarp „Užduotys“ ir „Kalendorius“.

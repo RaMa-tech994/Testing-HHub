@@ -1,6 +1,5 @@
 import {
   IconAlert,
-  IconBolt,
   IconCheck,
   IconClipboard,
   IconInbox,
@@ -13,7 +12,6 @@ const CARDS = [
   { key: 'inProgress', label: 'Vykdomos', icon: IconPlay, tone: 'blue' },
   { key: 'done', label: 'Atliktos', icon: IconCheck, tone: 'green' },
   { key: 'overdue', label: 'Pavėluotos', icon: IconAlert, tone: 'red' },
-  { key: 'critical', label: 'Kritinis prioritetas', icon: IconBolt, tone: 'orange' },
 ]
 
 export function StatsCards({ stats, activeKey, onSelect }) {

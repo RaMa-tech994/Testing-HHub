@@ -9,7 +9,6 @@ export function getTaskStats(tasks) {
       if (task.status === 'in_progress') stats.inProgress += 1
       if (task.status === 'done') stats.done += 1
       if (isTaskOverdue(task)) stats.overdue += 1
-      if (task.priority === 'critical') stats.critical += 1
       return stats
     },
     {
@@ -18,7 +17,6 @@ export function getTaskStats(tasks) {
       inProgress: 0,
       done: 0,
       overdue: 0,
-      critical: 0,
     },
   )
 }

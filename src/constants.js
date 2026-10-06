@@ -8,7 +8,6 @@ export const PRIORITIES = [
   { value: 'low', label: 'Žemas', tone: 'gray', rank: 1 },
   { value: 'medium', label: 'Vidutinis', tone: 'blue', rank: 2 },
   { value: 'high', label: 'Aukštas', tone: 'orange', rank: 3 },
-  { value: 'critical', label: 'Kritinis', tone: 'red', rank: 4 },
 ]
 
 export const DEFAULT_STATUS = 'not_started'

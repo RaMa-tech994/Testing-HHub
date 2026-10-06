@@ -22,7 +22,6 @@ function applyStatFilter(key) {
   if (key === 'inProgress') return { ...EMPTY_FILTERS, status: 'in_progress' }
   if (key === 'done') return { ...EMPTY_FILTERS, status: 'done' }
   if (key === 'overdue') return { ...EMPTY_FILTERS, overdue: true }
-  if (key === 'critical') return { ...EMPTY_FILTERS, priority: 'critical' }
   return { ...EMPTY_FILTERS }
 }
 
@@ -39,7 +38,6 @@ function activeStatKey(filters) {
   if (filters.status === 'not_started' && filters.priority === 'all') return 'notStarted'
   if (filters.status === 'in_progress' && filters.priority === 'all') return 'inProgress'
   if (filters.status === 'done' && filters.priority === 'all') return 'done'
-  if (filters.priority === 'critical' && filters.status === 'all') return 'critical'
   return null
 }
 

@@ -14,7 +14,7 @@ function normalizeTask(task) {
     title: task.title,
     dueDate: task.dueDate || null,
     assigneeId: task.assigneeId || null,
-    priority: task.priority || DEFAULT_PRIORITY,
+    priority: task.priority === 'critical' ? 'high' : task.priority || DEFAULT_PRIORITY,
     status: task.status || DEFAULT_STATUS,
     notes: task.notes || '',
     createdAt: task.createdAt || new Date().toISOString(),
